@@ -2,10 +2,13 @@
 FROM python:3.8
 
 # Set the working directory in the container
-WORKDIR /
+WORKDIR /app
 
 # Copy the application files into the working directory
-COPY . /
+COPY . .
+
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
 
 # Install the application dependencies
 RUN pip install -r requirements.txt
