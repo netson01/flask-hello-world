@@ -14,4 +14,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8080
 
 # Define the entry point for the container
-CMD ["python", "app.py"]
+#CMD ["python", "app.py"]
+
+
+
+# Command to run on server
+CMD ["gunicorn", "-b", "0.0.0.0:8080", "app:app"]
