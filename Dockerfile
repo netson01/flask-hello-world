@@ -11,7 +11,7 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Make port 5000 available to the world outside this container
-EXPOSE 8081
+EXPOSE 8080
 
 # Define the entry point for the container
 #CMD ["python", "app.py"]
@@ -19,4 +19,4 @@ EXPOSE 8081
 
 
 # Command to run on server
-CMD ["gunicorn", "-b", "0.0.0.0:8081", "app:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:8080", "app:app"]
